@@ -13,7 +13,7 @@ type Props = Card;
 const CardKotak = (props: Props) => {
   return (
     <div className="py-10">
-      <div className="w-[22rem] hover:scale-110 rounded-[20px] shadow-[2px_6px_6px_rgba(0,0,0,0.25) ]">
+      <div className="w-[22rem] hover:scale-110 transition rounded-[20px] shadow-[2px_6px_6px_rgba(0,0,0,0.25) ]">
         <Image
           className="rounded-t-[20px]"
           src={props.image}

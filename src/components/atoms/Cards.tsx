@@ -18,7 +18,7 @@ type Props = ProgramList;
 const Cards = (props: Props) => {
   return (
     <div className="flex flex-wrap justify-center gap-5 ">
-      <div className="hover:scale-110 hover:translate-y-6">
+      <div className="hover:scale-110 hover:translate-y-6 transition">
         <Card sx={{ maxWidth: 300, height: 450 }}>
           <div>
             <Image

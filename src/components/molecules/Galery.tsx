@@ -27,7 +27,7 @@ const Galery = () => {
                     </CardRectangle>
                 })}
             </div>
-            <div className=" text-[#843C74] mt-7 text-center text-[15px] font-extrabold ">
+            <div className=" text-[#843C74] mt-7 text-center text-[15px] font-extrabold transition ">
                 <Button style=" px-5 border-2 rounded border-[#843C74]  " title="Lihat Selengkapnya" />
             </div>
         </div>

@@ -20,7 +20,7 @@ const CardCircle: NextPage<Props> = ({
   action,
 }) => {
   return (
-    <div className="w-64 h-auto hover:scale-110">
+    <div className="w-64 h-auto hover:scale-110 transition">
       <div className="pb-4">
         <Image
           src={image}

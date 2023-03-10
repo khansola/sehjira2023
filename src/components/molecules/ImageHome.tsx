@@ -64,7 +64,7 @@ const ImageHome = () => {
                     {slideImage.desc}
                   </p>
                 </div>
-                <div className=" self-start justify-self-start  bg-white rounded-full  ml-16 mt-5 h-14 flex border-black border-4 text-[#843C74] font-bold hover:bg-[#843C74] hover:text-white    ">
+                <div className=" self-start justify-self-start bg-white rounded-full  ml-16 mt-5 h-14 flex border-black border-4 text-[#843C74] font-bold hover:bg-[#843C74] hover:text-white transition hover:scale-110   ">
                   <Button
                     style=" items-center justify-center flex "
                     title="PELAJARI LEBIH LANJUT"

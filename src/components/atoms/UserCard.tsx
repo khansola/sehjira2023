@@ -16,7 +16,7 @@ const UserCard = ({ username, address, url, email, action }: props) => {
       onClick={(e) => {
         action(e);
       }}
-      className="flex flex-wrap p-2 items-center m-1 border-gray-600 border-2 cursor-pointer hover:scale-105"
+      className="flex flex-wrap p-2 items-center m-1 border-gray-600 border-2 cursor-pointer hover:scale-105 transition"
     >
       {/* Read more about next/Image at https://nextjs.org/docs/api-reference/next/image */}
       <Image

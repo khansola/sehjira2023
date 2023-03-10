@@ -38,7 +38,7 @@ const Article1 = () => {
       <div className="flex flex-wrap gap-5 justify-center ">
         {ProgramList.map((e, i) => {
           return (
-            <div className="hover:scale-110 " key={i}>
+            <div className="hover:scale-110 transition " key={i}>
               <div className="flex flex-wrap justify-center mt-10 ">
                 <Card sx={{ maxWidth: 350, height: 450 }}>
                   <div className="w-[100%] flex flex-wrap justify-center  ">
