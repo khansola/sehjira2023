@@ -5,7 +5,7 @@ const section = () => {
     <>
       <h1 className="text-center mt-10 text-[24px] text-[#843C74] font-extrabold ">Visi Misi Sehjira</h1>
       <div className="flex flex-row  flex-wrap justify-evenly py-10 mr-10">
-        <div>
+        <div className="hover:scale-110">
           <Image
             src="/images/Section.jpg"
             alt="sehijra"

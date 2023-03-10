@@ -31,10 +31,10 @@ const TimSehijira = () => {
         <div className="font-bold text-[64px] text-[#000000] h-20">
           <h3 className="font-bold">Tim Sehjira</h3>
         </div>
-        <div className="flex flex-wrap items-center gap-10 w-auto justify-around">
+        <div className="flex flex-wrap items-center gap-10 w-auto justify-around ">
           {timsehjira.map((e, i) => {
             return (
-              <CardCircle
+              <CardCircle 
                 key={i}
                 image={e.image}
                 caption={e.caption}

@@ -10,8 +10,8 @@ const SosialMedia = () => {
       <div className=" flex flex-wrap justify-center mt-14 font-extrabold text-3x1 text-[#A03C78]">
         Sosial Media Kami
       </div>
-      <div className=" flex flex-wrap justify-center p-14 gap-3">
-        <a href="www.facebook.com">
+      <div className=" flex flex-wrap justify-center p-14 gap-3 ">
+        <a className='hover:scale-110' href="www.facebook.com">
           <Image
             src="/images/Facebook.svg"
             alt="image"
@@ -19,7 +19,7 @@ const SosialMedia = () => {
             height={100}
           />
         </a>
-        <a href="www.twitter.com">
+        <a className='hover:scale-110' href="www.twitter.com">
           <Image
             src="/images/Twitter.svg"
             alt="image"
@@ -27,7 +27,7 @@ const SosialMedia = () => {
             height={100}
           />
         </a>
-        <a href="www.instagram.com">
+        <a className='hover:scale-110' href="www.instagram.com">
           <Image
             src="/images/Instagram.svg"
             alt="image"
@@ -35,7 +35,7 @@ const SosialMedia = () => {
             height={100}
           />
         </a>
-        <a href="www.linkedin.com">
+        <a className='hover:scale-110' href="www.linkedin.com">
           <Image
             src="/images/LinkedIn.svg"
             alt="image"
@@ -43,7 +43,7 @@ const SosialMedia = () => {
             height={100}
           />
         </a>
-        <a href="www.youtube.com">
+        <a className='hover:scale-110' href="www.youtube.com">
           <Image
             src="/images/YouTube.svg"
             alt="image"

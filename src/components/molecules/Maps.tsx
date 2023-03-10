@@ -33,10 +33,10 @@ const Maps = () => {
                 
                 <div className="pt-14 gap-10">
                     <ul className='flex flex-wrap gap-5'>
-                        <li className=" p-5 px-16 border-2 rounded-full text-white border-[#843C74] bg-[#843C74]">
+                        <li className=" p-5 px-16 border-2 rounded-full text-white border-[#843C74] bg-[#843C74] hover:bg-white hover:text-[#843C74] ">
                             <Button title="Lihat Lokasi" />
                         </li>
-                        <li className=" p-5 px-10 border-2 rounded-full text-[#843C74] border-[#843C74]">
+                        <li className=" p-5 px-10 border-2 rounded-full text-[#843C74] border-[#843C74] hover:bg-[#10b919] hover:text-white">
                             <Button title="Hubungi Whatapps" />
                         </li>
                     </ul>

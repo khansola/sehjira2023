@@ -29,7 +29,7 @@ const Contact = () => {
                   placeholder="Please type your message here..."
                 />
               </div>
-              <div>
+              <div className="">
                 <Button title="Send message" />
               </div>
             </div>

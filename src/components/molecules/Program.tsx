@@ -71,7 +71,7 @@ const Program = () => {
                 </div>
             </div>
             <div className='px-[5%]'>
-                <h3 className='text-4xl text-[#A03C78] '>
+                <h3 className='text-4xl text-[#A03C78] font-bold '>
                     Program Unggulan Lainnya
                 </h3>
             </div>
@@ -87,8 +87,8 @@ const Program = () => {
                     )
                 })}
             </div>
-            <div className=" text-white mt-7 text-center text-[15px] font-extrabold ">
-                <Button style=" py-2 px-9 bg-[#843C74] rounded border-[#843C74]  " title="Muat Lebih Banyak" />
+            <div className=" text-white mt-7 text-center text-[15px] font-extrabold  ">
+                <Button style=" py-2 px-9 bg-[#843C74] hover:bg-white hover:text-[#843C74] rounded border-[#843C74]   " title="Muat Lebih Banyak" />
             </div>
 
         </div>

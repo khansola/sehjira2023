@@ -17,8 +17,8 @@ type Props = ProgramList;
 
 const Cards = (props: Props) => {
   return (
-    <div className="flex flex-wrap justify-center gap-5">
-      <div>
+    <div className="flex flex-wrap justify-center gap-5 ">
+      <div className="hover:scale-110 hover:translate-y-6">
         <Card sx={{ maxWidth: 300, height: 450 }}>
           <div>
             <Image
@@ -28,7 +28,7 @@ const Cards = (props: Props) => {
               height={220}
             ></Image>
           </div>
-          <CardContent>
+          <CardContent className="hover:bg-[#843C74] hover:text-white">
             <div>
               <Typography
                 className=""

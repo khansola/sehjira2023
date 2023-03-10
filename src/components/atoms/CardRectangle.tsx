@@ -13,7 +13,7 @@ type Props = ProgramList;
 
 const CardRectangle: NextPage<Props> = ({ children, image, action }) => {
   return (
-    <div className="flex flex-wrap justify-center gap-5">
+    <div className="flex flex-wrap justify-center gap-5 hover:scale-110">
       <div>
         <Card sx={{ maxWidth: 300, height: "auto" }}>
           <div>

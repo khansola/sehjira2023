@@ -34,9 +34,9 @@ const Section3 = () => {
             {
                 ProgramList.map((e, i) => {
                     return (
-                        <div key={i} className='flex flex-wrap justify-center'>
+                        <div key={i} className='flex flex-wrap justify-center hover:scale-110 '>
                             <Card sx={{ maxWidth: 420, height: 520 }}>
-                                <div className='w-[100%] flex flex-wrap justify-center px-[7%] rounded-md '>
+                                <div className='w-[100%] flex flex-wrap justify-center px-[7%] rounded-md  '>
                                     <Image
                                         src={e.image}
                                         alt={"vector.png"}
@@ -44,7 +44,7 @@ const Section3 = () => {
                                         height={160}
                                     ></Image>
                                 </div>
-                                <CardContent>
+                                <CardContent className='hover:text-white hover:bg-[#843C74]'>
                                     <Typography className='text-left font-bold ' gutterBottom variant="h5" component="div">
                                         {e.caption}
                                     </Typography>

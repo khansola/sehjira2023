@@ -6,7 +6,7 @@ function Share() {
   return (
     <div className="">
       <ul className="w-full flex gap-3 mt-5 px-[7%]">
-        <a className="hyperlink" href="www.facebook.com">
+        <a className="hyperlink hover:scale-110" href="www.facebook.com">
           <Image
             src="/static/svgs/Facebook.svg"
             alt={"Facebook.png"}
@@ -14,7 +14,7 @@ function Share() {
             height={36}
           ></Image>
         </a>
-        <a className="hyperlink" href="www.Twitter.com">
+        <a className="hyperlink hover:scale-110" href="www.Twitter.com">
           <Image
             src="/static/svgs/Twitter.svg"
             alt={"Twitter.png"}
@@ -22,7 +22,7 @@ function Share() {
             height={36}
           ></Image>
         </a>
-        <a className="hyperlink" href="www.Instagram.com">
+        <a className="hyperlink hover:scale-110" href="www.Instagram.com">
           <Image
             src="/static/svgs/Instagram.svg"
             alt={"Intagram.png"}
@@ -30,7 +30,7 @@ function Share() {
             height={36}
           ></Image>
         </a>
-        <a className="hyperlink" href="www.Linkedin.com">
+        <a className="hyperlink hover:scale-110" href="www.Linkedin.com">
           <Image
             src="/static/svgs/Linkedin.svg"
             alt={"Intagram.png"}

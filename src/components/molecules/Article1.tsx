@@ -29,19 +29,19 @@ const Article1 = () => {
   ];
 
   return (
-    <div>
+    <div className="">
       <div>
         <h1 className="text-[#843C74] text-3xl text-center mt-16">
           Artikel Terbaru
         </h1>
       </div>
-      <div className="flex flex-wrap gap-5 justify-center">
+      <div className="flex flex-wrap gap-5 justify-center ">
         {ProgramList.map((e, i) => {
           return (
-            <div key={i}>
-              <div className="flex flex-wrap justify-center mt-10">
+            <div className="hover:scale-110 " key={i}>
+              <div className="flex flex-wrap justify-center mt-10 ">
                 <Card sx={{ maxWidth: 350, height: 450 }}>
-                  <div className="w-[100%] flex flex-wrap justify-center ">
+                  <div className="w-[100%] flex flex-wrap justify-center  ">
                     <Image
                       src={e.image}
                       alt={"vector.png"}
@@ -49,7 +49,7 @@ const Article1 = () => {
                       height={160}
                     ></Image>
                   </div>
-                  <CardContent>
+                  <CardContent className="hover:text-white hover:bg-[#843C74]">
                     <Typography
                       className="text-center"
                       gutterBottom

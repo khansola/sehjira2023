@@ -109,7 +109,7 @@ const About = () => {
       <TimSehijira />
 
       <div className=" flex text-center justify-center items-center">
-        <div className="mt-16 w-auto p-2  px-16 border-2 rounded-full text-white border-[#843C74] bg-[#843C74] ">
+        <div className="mt-16 w-auto p-2  px-16 border-2 rounded-full text-white border-[#843C74] bg-[#843C74] hover:bg-white hover:text-[#843C74] ">
           <Button title="Lihat Selengkapnya 🡲" />
         </div>
       </div>
