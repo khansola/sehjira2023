@@ -6,38 +6,38 @@ function Share() {
   return (
     <div className="">
       <ul className="w-full flex gap-3 mt-5 px-[7%]">
-        <Link className="hyperlink" href="www.facebook.com">
+        <a className="hyperlink" href="www.facebook.com">
           <Image
             src="/static/svgs/Facebook.svg"
             alt={"Facebook.png"}
             width={36}
             height={36}
           ></Image>
-        </Link>
-        <Link className="hyperlink" href="/">
+        </a>
+        <a className="hyperlink" href="www.Twitter.com">
           <Image
             src="/static/svgs/Twitter.svg"
             alt={"Twitter.png"}
             width={36}
             height={36}
           ></Image>
-        </Link>
-        <Link className="hyperlink" href="/">
+        </a>
+        <a className="hyperlink" href="www.Instagram.com">
           <Image
             src="/static/svgs/Instagram.svg"
             alt={"Intagram.png"}
             width={36}
             height={36}
           ></Image>
-        </Link>
-        <Link className="hyperlink" href="/">
+        </a>
+        <a className="hyperlink" href="www.Linkedin.com">
           <Image
             src="/static/svgs/Linkedin.svg"
             alt={"Intagram.png"}
             width={36}
             height={36}
           ></Image>
-        </Link>
+        </a>
       </ul>
     </div>
   );

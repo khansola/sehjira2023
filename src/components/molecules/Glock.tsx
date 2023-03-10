@@ -30,19 +30,19 @@ const List = [
     caption: "Pelatihan kemandırian disabilitas rungu/Tuli bekerja",
   },
   {
-    image: "/images/f.jpg",
+    image: "/images/Container5.png",
     caption: "Pelatihan kemandırian disabilitas rungu/Tuli bekerja",
   },
   {
-    image: "/images/f.jpg",
+    image: "/images/Container6.png",
     caption: "Pelatiha kemandırian disabilitas rungu/Tuli bekerja",
   },
   {
-    image: "/images/s.jpg",
+    image: "/images/Container7.png",
     caption: "Pelatihan kemandırian disabilitas rungu/Tuli bekerja",
   },
   {
-    image: "/images/s.jpg",
+    image: "/images/Container8.png",
     caption: "Pelatihan kemandırian disabilitas rungu/Tuli bekerja",
   },
 ];

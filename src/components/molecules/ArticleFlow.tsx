@@ -63,7 +63,7 @@ const ArticleFlow = () => {
                 </div>
                 <div className=''>
                     <Image
-                        src="/images/s.jpg"
+                        src="/images/Container11.jpg"
                         alt="sehjira"
                         height={200}
                         width={450}

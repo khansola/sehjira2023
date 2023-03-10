@@ -11,46 +11,46 @@ const SosialMedia = () => {
         Sosial Media Kami
       </div>
       <div className=" flex flex-wrap justify-center p-14 gap-3">
-        <Link href="www.facebook.com">
+        <a href="www.facebook.com">
           <Image
             src="/images/Facebook.svg"
             alt="image"
             width={100}
             height={100}
           />
-        </Link>
-        <Link href="www.twitter.com">
+        </a>
+        <a href="www.twitter.com">
           <Image
             src="/images/Twitter.svg"
             alt="image"
             width={100}
             height={100}
           />
-        </Link>
-        <Link href="www.instagram.com">
+        </a>
+        <a href="www.instagram.com">
           <Image
             src="/images/Instagram.svg"
             alt="image"
             width={100}
             height={100}
           />
-        </Link>
-        <Link href="www.linkedin.com">
+        </a>
+        <a href="www.linkedin.com">
           <Image
             src="/images/LinkedIn.svg"
             alt="image"
             width={100}
             height={100}
           />
-        </Link>
-        <Link href="www.youtube.com">
+        </a>
+        <a href="www.youtube.com">
           <Image
             src="/images/YouTube.svg"
             alt="image"
             width={100}
             height={100}
           />
-        </Link>
+        </a>
       </div>
     </div>
 

@@ -12,12 +12,12 @@ const About = () => {
     <div className="flex justify-center items-center flex-col">
       <div className="flex justify-center items-center flex-col">
         <VisiMisi
-          image="/images/c.jpg"
+          image="/images/Container9.jpg"
           title="Tentang Sehjira"
           desc="Rachmita Harahap, Pendiri Yayasan Sehat Jiwa Raga tampil pada Metro TV acara Kick Andy"
         ></VisiMisi>
         <VisiMisi
-          image="/images/c.jpg"
+          image="/images/Container10.jpg"
           title="Latar Belakang"
           content="Yayasan SEHJIRA adalah sebuah yayasan yang berfokus pada perlindungan dan advokasi bagi penyandang disabilitas khususnya disabilitas rungu/tuli. Yayasan ini ingin membantu para anggotanya mengembangkan potensi dan mendapatkan hak serta kehidupan yang layak di masyarakat. SEHJIRA menyadari pentingnya memiliki tujuan dan program kerja yang sesuai dengan visi misi untuk mencapai hal tersebut. Melalui pelatihan dan kemandirian yang diadakan, SEHJIRA dapat membantu para penyandang disabilitas rungu/tuli bersosialisasi dengan masyarakat luas. Disabilitas rungu/tuli membutuhkan dukungan dan perlindungan agar merasa terlindungi dari segala macam bentuk stigma atau diskriminasi, serta mendapatkan kehidupan yang setara dengan masyarakat non-tuli pada umumnya. SEHJIRA memberikan pelatihan bahasa isyarat yang berbasis internasional agar gerak dan bahasa tubuh yang digunakan oleh disabilitas rungu/tuli dapat dipahami dengan sempurna."
           desc="Forum The Art of Sign Language"
