@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .blinking-cursor:after {
+    content: "|";
+    @apply text-purple-700;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply lg:text-xl text-sm overflow-x-hidden;
+  }
+  h1 {
+    @apply font-bold lg:text-2xl text-lg;
+  }
+}
+
+.container {
+  @apply flex flex-col;
+}
+
+/* .hyperlink {
+  @apply block mt-4 lg:inline-block lg:mt-0 mr-4;
+} */
+
+.popup {
+  @apply transition ease-in-out delay-150 bg-violet-600 hover:-translate-y-1 hover:scale-110 hover:bg-violet-700 duration-300;
+}
+
+.fontDmSans {
+  font-family: "DM Sans", sans-serif;
+}
+
+/* * {
+  border: 1px solid black;
+} */
