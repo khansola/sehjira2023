@@ -61,7 +61,7 @@ const ArticleFlow = () => {
                         OUTBOND DI LEBAK BULUS WISMA SLB PEMBINA JAKARTA, 19 - 20 JUNI 2010
                     </p>
                 </div>
-                <div className=''>
+                <div className=' hover:scale-110 transition'>
                     <Image
                         src="/images/Container11.jpg"
                         alt="sehjira"
