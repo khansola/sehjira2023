@@ -30,6 +30,12 @@
   @apply flex flex-col;
 }
 
+body.dark {
+  background-color: #1a202c;
+  color: #f7fafc;
+  transition: background-color 2s ease-in-out, color 2s ease-in-out;
+}
+
 /* .hyperlink {
   @apply block mt-4 lg:inline-block lg:mt-0 mr-4;
 } */

@@ -30,7 +30,7 @@ const VisiMisi: NextPage<Props> = ({
         <div>
           <p className="py-4">{content}</p>
         </div>
-        <div className="">
+        <div className=" hover:scale-95 transition duration-500">
           {image ? (
             <Image src={image} alt={"image"} height={570} width={1240} />
           ) : (

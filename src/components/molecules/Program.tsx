@@ -61,7 +61,7 @@ const Program = () => {
                         OUTBOND DI LEBAK BULUS WISMA SLB PEMBINA JAKARTA, 19 - 20 JUNI 2010
                     </p>
                 </div>
-                <div className=''>
+                <div className='hover:scale-110 transition duration-500'>
                     <Image
                         src="/images/Container11.jpg"
                         alt="sehjira"
@@ -75,7 +75,7 @@ const Program = () => {
                     Program Unggulan Lainnya
                 </h3>
             </div>
-            <div className='flex flex-wrap justify-between px-[5%] items-center py-5 gap-[5px]'>
+            <div className='flex flex-wrap justify-between px-[5%] items-center py-5 gap-[5px] '>
                 {card2.map((e, i) => {
                     return (
                         <CardKotak

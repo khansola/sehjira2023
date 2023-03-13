@@ -10,7 +10,7 @@ const DarkModeToggle = () => {
 
   return (
     <button
-      className="fixed bottom-4 left-4 z-50 p-2 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:scale-110 "
+      className="fixed bottom-4 left-4 z-50 p-2 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:scale-110 transition duration-500 "
       onClick={toggleDarkMode}
     >
       {isDarkMode ? (

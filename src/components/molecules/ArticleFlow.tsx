@@ -53,7 +53,7 @@ const ArticleFlow = () => {
     ];
     return (
         <div>
-            <h1 className='font-bold text-4xl px-[5%] text-[#A03C78]'>Artikel Sehjira Terbaru</h1>
+            <h1 className='font-bold text-4xl text-[#A03C78] px-[5%]'>Artikel Sehjira Terbaru</h1>
             <div className='flex flex-wrap items-center justify-around'>
                 <div className='w-[40%]'>
                     <h1 className='font-bold text-4xl text-[#A03C78]'>Pelatihan Kemandirian Remaja Tuna Rungu Ke-5</h1>
@@ -61,7 +61,7 @@ const ArticleFlow = () => {
                         OUTBOND DI LEBAK BULUS WISMA SLB PEMBINA JAKARTA, 19 - 20 JUNI 2010
                     </p>
                 </div>
-                <div className=' hover:scale-110 transition'>
+                <div className=' hover:scale-110 transition duration-300'>
                     <Image
                         src="/images/Container11.jpg"
                         alt="sehjira"
@@ -71,7 +71,7 @@ const ArticleFlow = () => {
                 </div>
             </div>
             <div className='px-[5%]'>
-                <h3 className='text-4xl text-[#A03C78] '>
+                <h3 className='text-4xl text-[#A03C78] font-bold '>
                     Artikel Lainnya
                 </h3>
             </div>

@@ -44,7 +44,7 @@ const ImageHome = () => {
     <div className="slide-container  ">
       <Slide duration={3000}>
         {slideImages.map((slideImage, index) => (
-          <div className="hover:scale-95 transition" key={index}>
+          <div className="hover:scale-95 transition duration-500" key={index}>
             <div
               className="
             flex 

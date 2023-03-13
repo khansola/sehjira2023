@@ -31,14 +31,14 @@ const Article1 = () => {
   return (
     <div className="">
       <div>
-        <h1 className="text-[#843C74] text-3xl text-center mt-16">
+        <h1 className="text-[#843C74] text-3xl text-center mt-16 font-bold">
           Artikel Terbaru
         </h1>
       </div>
       <div className="flex flex-wrap gap-5 justify-center ">
         {ProgramList.map((e, i) => {
           return (
-            <div className="hover:scale-110 transition " key={i}>
+            <div className="hover:scale-110 transition duration-500 " key={i}>
               <div className="flex flex-wrap justify-center mt-10 ">
                 <Card sx={{ maxWidth: 350, height: 450 }}>
                   <div className="w-[100%] flex flex-wrap justify-center  ">
