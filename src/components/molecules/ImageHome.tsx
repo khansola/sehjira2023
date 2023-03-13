@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import Button from "../atoms/Button";
@@ -40,6 +40,18 @@ const slideImages = [
 ];
 
 const ImageHome = () => {
+  const [currentText, setCurrentText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextIndex = (currentIndex + 1) % slideImages[0].caption.length;
+      setCurrentIndex(nextIndex);
+      setCurrentText(slideImages[0].caption.slice(0, nextIndex + 1));
+    }, 200);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   return (
     <div className="slide-container  ">
       <Slide duration={3000}>
@@ -58,7 +70,7 @@ const ImageHome = () => {
                 <div>
                   <h1 className=" text-3xl md:text-5xl bg-gradient-to-r from-[#A03c78] to-purple-400 bg-clip-text text-transparent ml-20 mt-60 w-[53%] blinking-cursor font-extrabold ">
                     {" "}
-                    {slideImage.caption}{" "}
+                    {currentText}{" "}
                   </h1>
                   <p className=" mt-5 w-2/6 md:w-2/6 text-white ml-20">
                     {slideImage.desc}

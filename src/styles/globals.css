@@ -8,6 +8,11 @@
     content: "|";
     @apply text-purple-700;
     animation: blink 1s infinite;
+
+    /* .text-write {
+      overflow: hidden;
+      animation: write 2s steps(20, end) infinite;
+    } */
   }
 
   @keyframes blink {
@@ -25,6 +30,22 @@
     @apply font-bold lg:text-2xl text-lg;
   }
 }
+
+@keyframes text-writing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.text-writing {
+  animation: text-writing 2s steps(30, end) forwards;
+  
+  /* tambahkan properti lainnya sesuai kebutuhan */
+}
+
 
 .container {
   @apply flex flex-col;
