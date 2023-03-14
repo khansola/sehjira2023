@@ -10,7 +10,10 @@ function Share() {
           <li>
             <p>Bagikan</p>
           </li>
-          <a className="hyperlink hover:scale-110 transition" href="www.facebook.com">
+          <a
+            className="hyperlink hover:scale-110 transition"
+            href="www.facebook.com"
+          >
             <Image
               src="/images/Facebook2.svg"
               alt={"Facebook.png"}
@@ -18,7 +21,10 @@ function Share() {
               height={36}
             ></Image>
           </a>
-          <a className="hyperlink hover:scale-110 transition" href="www.instagram.com">
+          <a
+            className="hyperlink hover:scale-110 transition"
+            href="www.instagram.com"
+          >
             <Image
               src="/images/Instagram2.svg"
               alt={"Intagram.png"}
@@ -26,7 +32,10 @@ function Share() {
               height={36}
             ></Image>
           </a>
-          <a className="hyperlink hover:scale-110 transition" href="www.Twitter.com">
+          <a
+            className="hyperlink hover:scale-110 transition"
+            href="www.Twitter.com"
+          >
             <Image
               src="/images/Twitter2.svg"
               alt={"Twitter.png"}
@@ -34,7 +43,10 @@ function Share() {
               height={36}
             ></Image>
           </a>
-          <a className="hyperlink hover:scale-110 transition" href="www.Youtube.com">
+          <a
+            className="hyperlink hover:scale-110 transition"
+            href="www.Youtube.com"
+          >
             <Image
               src="/images/Youtube2.svg"
               alt={"Youtube.png"}

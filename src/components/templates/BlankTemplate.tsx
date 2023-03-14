@@ -4,14 +4,14 @@ import PrimaryNavigation from "../molecules/PrimaryNavigation";
 import DarkModeToggle from "../molecules/DarkModeToggle";
 import SosmedSide from "../atoms/SosmedSide";
 import { CommonSEO } from "../SEO";
-import { useRouter } from "next/router";
+import { useRouter as Router } from "next/router";
 
 type props = {
   children: React.ReactNode;
 };
 
 const BlankTemplate: NextPage<props> = ({ children }) => {
-  const router = useRouter();
+  const router = Router();
   const myPath = (): string => {
     let path: string = "";
     if (router.asPath == "/") {
