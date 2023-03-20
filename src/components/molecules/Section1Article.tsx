@@ -2,7 +2,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { Box } from "@mui/system";
 
-const Section1Article = () => {
+type ArticleSlug = {
+  slug?: string;
+  title: string;
+  content: string;
+  excerpt?: string;
+  created_at: string;
+  updated_at?: string;
+};
+
+type Props = ArticleSlug;
+
+const Section1Article = (props: Props) => {
   return (
     <div className="w-full grid justify-center mt-5">
       <ul className="px-[7%]">
@@ -26,9 +37,10 @@ const Section1Article = () => {
         </Link>
       </ul>
       <div className="items-left mt-2 px-[7%] font-bold  text-[#A03C78]  ">
-        <h1 className="text-4xl">
+        <h1 className="text-4xl">{props.title}</h1>
+        {/* <h1 className="text-4xl">
           Pelatihan Kemandirian Remaja Tuna Rungu Ke-5
-        </h1>
+        </h1> */}
       </div>
       <div>
         <ul className="flex gap-3 mt-1 px-[7%]">
@@ -41,7 +53,8 @@ const Section1Article = () => {
             ></Image>
           </li>
           <li>
-            <p>31 January 2030</p>
+            {/* <p>31 January 2030</p> */}
+            <p>{props.created_at}</p>
           </li>
         </ul>
       </div>
@@ -53,7 +66,8 @@ const Section1Article = () => {
           height={600}
         ></Image>
       </div>
-      <p className=" text-justify pt-5 px-[7%]">
+      <p className=" text-justify pt-5 px-[7%]">{props.content}</p>
+      {/* <p className=" text-justify pt-5 px-[7%]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus commodo
         luctus venenatis. Integer rhoncus iaculis quam, et iaculis odio sagittis
         consequat. In at enim justo. Ut in lacus a sem iaculis accumsan.
@@ -72,7 +86,7 @@ const Section1Article = () => {
         varius tempor eros, sed pellentesque nulla gravida ac. Sed porta gravida
         lorem ac dictum. In at velit at sapien sagittis sagittis. Aenean
         scelerisque felis est, et pellentesque magna tincidunt ac.
-      </p>
+      </p> */}
       <div className="grid justify-center mt-5 px-[7%] hover:scale-110 transition">
         <Image
           src="/images/Rectangle 228.png"
@@ -81,7 +95,8 @@ const Section1Article = () => {
           height={400}
         ></Image>
       </div>
-      <p className="mt-5 text-justify px-[7%]  ">
+      <p className="mt-5 text-justify px-[7%]  ">{props.content}</p>
+      {/* <p className="mt-5 text-justify px-[7%]  ">
         Curabitur luctus orci vel magna maximus, nec tristique tellus bibendum.
         In ut magna et elit gravida tempor. Duis vulputate ex ultrices felis
         dignissim dictum. Aliquam eu ultrices libero, vel vulputate ex. Etiam
@@ -115,7 +130,7 @@ const Section1Article = () => {
         lacus. Phasellus ipsum lectus, gravida sed rhoncus et, fermentum
         ultricies ex. Aliquam mattis quam quis odio blandit, aliquam hendrerit
         nunc fringilla.
-      </p>
+      </p> */}
       <div className="mt-5 px-[7%]  ">
         <Box sx={{ borderBottom: 1, borderColor: "divider", width: "100%" }} />
       </div>
@@ -124,13 +139,3 @@ const Section1Article = () => {
 };
 
 export default Section1Article;
-
-// const Section1Article = () => {
-//   return (
-//     <div>
-//       <h1>ss</h1>
-//     </div>
-//   );
-// };
-
-// export default Section1Article;

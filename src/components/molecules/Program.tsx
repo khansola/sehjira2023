@@ -5,9 +5,10 @@ import { NextPage } from "next";
 
 type Props = {
   children: React.ReactNode;
+  action: (e: React.MouseEvent) => void;
 };
 
-const Program: NextPage<Props> = ({ children }) => {
+const Program: NextPage<Props> = ({ children, action }) => {
   return (
     <div>
       <h1 className="font-bold text-4xl px-[5%] text-[#A03C78]">
@@ -41,6 +42,7 @@ const Program: NextPage<Props> = ({ children }) => {
       </div>
       <div className=" text-white mt-7 text-center text-[15px] font-extrabold  ">
         <Button
+          action={action}
           style=" py-2 px-9 bg-[#843C74] hover:bg-white hover:text-[#843C74] transition rounded border-[#843C74]   "
           title="Muat Lebih Banyak"
         />

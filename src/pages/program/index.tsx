@@ -4,7 +4,7 @@ import Program from "@/components/molecules/Program";
 import CardKotak from "@/components/atoms/CardKotak";
 import axios from "axios";
 import { useRouter as Router } from "next/router";
-// import { useEffect, useState } from "react";
+import { useState as UseState } from "react";
 
 // type Program = {
 //   id: number;
@@ -28,7 +28,8 @@ const index = (props: any) => {
   // };
   return (
     <BlankTemplate>
-      <Program>
+      {/* <Program action={() => setPage(page + 1)}> */}
+      <Program action={() => console.log("s")}>
         {res.map((e: any, i: any) => {
           return (
             <div key={i}>
@@ -50,11 +51,10 @@ const index = (props: any) => {
 export default index;
 
 export async function getServerSideProps() {
-  const res = await axios.get(`http://localhost:8080/v1/articles`);
+  const res = await axios.get(`http://localhost:8080/v1/articles?page=${1}`);
   return {
     props: {
       res: res.data.data.articles,
     },
   };
 }
-// ${router.query}

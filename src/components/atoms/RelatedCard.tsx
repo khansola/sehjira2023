@@ -1,44 +1,59 @@
 import React from "react";
 import Image from "next/image";
-import { NextPage } from "next";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
 
-interface Card {
+type Card = {
   image: string;
-  caption?: string;
-  title?: string;
-  action?: (e: React.MouseEvent) => void;
-  children?: React.ReactNode;
-}
+  title: string;
+  excerpt: string;
+  created_at: string;
+};
 
 type Props = Card;
 
-const CardCircle: NextPage<Props> = ({
-  children,
-  image,
-  caption,
-  title,
-  action,
-}) => {
+const RelatedCard = (props: Props) => {
   return (
-    <div className="w-64 h-auto hover:scale-110 transition">
-      <div className="pb-4">
-        <Image
-          src={image}
-          alt="dasd"
-          width={270}
-          height={270}
-          className="rounded-full"
-        />
-      </div>
-      <div className="pb-2">
-        <h3 className="text-3xl font-bold text-[#5D5A88] text-center">
-          {title}
-        </h3>
-      </div>
-      <p className="text-center font-medium text-[20px]">{caption}</p>
-      <div className="flex justify-center">{children}</div>
+    <div className="flex flex-wrap justify-center hover:scale-110 transition duration-500 ">
+      <Card sx={{ maxWidth: 420, height: 520 }}>
+        <div className="w-[100%] flex flex-wrap justify-center px-[7%] rounded-md  ">
+          <Image
+            src={props.image}
+            alt={"vector.png"}
+            width={370}
+            height={160}
+          ></Image>
+        </div>
+        <CardContent className="hover:text-white hover:bg-[#843C74]">
+          <Typography
+            className="text-left font-bold "
+            gutterBottom
+            variant="h5"
+            component="div"
+          >
+            {props.title}
+          </Typography>
+          <Typography
+            className="text-left"
+            gutterBottom
+            variant="h6"
+            component="div"
+          >
+            {props.excerpt}
+          </Typography>
+          <Typography
+            className="text-left"
+            gutterBottom
+            variant="h6"
+            component="div"
+          >
+            {props.created_at}
+          </Typography>
+        </CardContent>
+      </Card>
     </div>
   );
 };
 
-export default CardCircle;
+export default RelatedCard;
