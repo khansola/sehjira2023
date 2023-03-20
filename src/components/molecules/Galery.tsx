@@ -15,7 +15,7 @@ const Galery = () => {
     ];
     return (
         <div className='mt-16' >
-            <h1 className='text-[#843C74] text-3xl text-center mt-5'>
+            <h1 className='text-[#843C74] text-[50px] text-center py-5'>
                 Galery Kami
             </h1>
             <div className=" flex flex-wrap justify-center gap-16 mt-5">

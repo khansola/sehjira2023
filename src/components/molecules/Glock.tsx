@@ -1,16 +1,7 @@
 import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import Button from "../atoms/Button";
 import Cards from "../atoms/Cards";
-
-const divStyle = {
-  display: "flex",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  height: "768px",
-  width: "100%",
-};
 
 const List = [
   {
@@ -52,7 +43,7 @@ const responsiveSet = [
     breakpoint: 800,
     settings: {
       slidesToShow: 4,
-      slidesToScroll: 2,
+      slidesToScroll: 1,
     },
   },
   {
@@ -68,7 +59,7 @@ const Glock = () => {
   return (
     <div>
       <div className="pb-10">
-        <h1 className="text-5xl text-[#843C74] text-center">
+        <h1 className="text-[50px] text-[#843C74] text-center mt-10">
           Program Unggulan Sehjira
         </h1>
       </div>
