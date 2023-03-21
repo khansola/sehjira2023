@@ -31,7 +31,7 @@ const TimSehijira = () => {
         <div className="font-bold text-[64px] text-[#000000] h-20">
           <h3 className="font-bold">Tim Sehjira</h3>
         </div>
-        <div className="flex flex-wrap items-center gap-10 w-auto justify-around ">
+        <div className="flex flex-wrap justify-center gap-10 w-auto  ">
           {timsehjira.map((e, i) => {
             return (
               <CardCircle 

@@ -80,6 +80,9 @@ const Glock = () => {
             </div>
           ))}
         </Slide>
+        <div className=" text-[#843C74] mt-7 text-center text-[15px] font-extrabold transition ">
+                <Button style=" px-5 py-2 border-2 rounded border-[#843C74]  " title="Lihat Semua Program Unggulan" />
+            </div>
       </div>
     </div>
   );

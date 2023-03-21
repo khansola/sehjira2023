@@ -10,7 +10,7 @@ type Props = logo;
 const Logo = (props: Props) => {
   return (
     <div className="">
-      <div className="h-40 shadow-md">
+      <div className="h-40 shadow-md justify-center items-center flex">
         <Image alt="logo" src={props.image} width={208} height={200} />
       </div>
     </div>

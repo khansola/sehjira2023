@@ -5,7 +5,7 @@ import Image from "next/image";
 const SosmedSide = () => {
   return (
     <>
-      <div className="flex flex-col justify-center fixed mt-36 top-10 z-50">
+      <div className="flex flex-col justify-center fixed mt-36 top-10 z-[500]">
         <a
           className="hover:scale-110 transition"
           href="https://www.facebook.com"
