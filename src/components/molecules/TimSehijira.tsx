@@ -4,22 +4,22 @@ import CardCircle from "../atoms/CardCircle";
 const TimSehijira = () => {
   const timsehjira = [
     {
-      image: "/images/s.jpg",
+      image: "/images/Container9.png",
       caption: "Dr. Rachmita Maun Harahap, ST., M Sn",
       title: "Dewan Pendiri",
     },
     {
-      image: "/images/s.jpg",
+      image: "/images/Container9.png",
       caption: "Linda Nora, S.E",
       title: "Dewan Pengawas",
     },
     {
-      image: "/images/s.jpg",
+      image: "/images/Container9.png",
       caption: "Plt. Ade Nurima, S.Komp",
       title: "Dewan Pengurus Ketua",
     },
     {
-      image: "/images/s.jpg",
+      image: "/images/Container9.png",
       caption: "Chaerunisa Eka, S.Ds",
       title: "Dewan Pengurus Sekretaris",
     },

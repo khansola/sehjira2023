@@ -1,7 +1,8 @@
-import React from "react";
 import Button from "../atoms/Button";
 import CardRectangle from "../atoms/CardRectangle";
 import Share from "../atoms/Share";
+import React, { useState, useEffect } from 'react'
+
 
 const Galery = () => {
   const Rectangle = [
@@ -42,6 +43,10 @@ const Galery = () => {
       image: "/images/Card.jpg",
     },
   ];
+
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [zoomedIndex, setZoomedIndex] = useState(null);
+
   return (
     <div className="mt-16 px-[5%]">
       <div className=" flex flex-wrap justify-center gap-16">

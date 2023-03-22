@@ -5,6 +5,9 @@ import DarkModeToggle from "../molecules/DarkModeToggle";
 import SosmedSide from "../atoms/SosmedSide";
 import { CommonSEO } from "../SEO";
 import { useRouter as Router } from "next/router";
+import LoadingPage from "../atoms/LoadingPage";
+
+
 
 type props = {
   children: React.ReactNode;
@@ -26,6 +29,9 @@ const BlankTemplate: NextPage<props> = ({ children }) => {
   return (
     <>
       <div className="min-h-screen flex w-full flex-col dark:bg-[#1a202c] ">
+        <div className="fixed z-99231239">
+        <LoadingPage />
+        </div>
         <CommonSEO
           title={myPath()}
           description="Description of Create Next Page by GG"

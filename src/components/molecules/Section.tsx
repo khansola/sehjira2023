@@ -53,7 +53,7 @@ const ImageSlider = () => {
         {List.map((item, index) => (
           <button
             key={index}
-            className={`h-0.75rem w-0.75rem rounded-full mx-0.5rem ${currentSlide === index ? "bg-[#843C74]" : "bg-gray-400"
+            className={`h-0.75rem w-0.75rem rounded-full mx-0.5rem ${currentSlide === index ? "bg-[#843C74]" : "bg-gray-400 "
               } focus:outline-none`}
             onClick={() => setCurrentSlide(index)}
           ></button>
