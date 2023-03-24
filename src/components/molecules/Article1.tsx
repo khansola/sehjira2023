@@ -31,7 +31,7 @@ const Article1 = () => {
   return (
     <div className="">
       <div>
-        <h1 className="text-[#843C74] text-3xl text-center mt-16 font-bold">
+        <h1 className="text-[#843C74] text-5xl text-center mt-16 font-bold">
           Artikel Terbaru
         </h1>
       </div>

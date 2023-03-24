@@ -11,7 +11,7 @@ const SosialMedia = () => {
         Sosial Media Kami
       </div>
       <div className=" flex flex-wrap justify-center p-14 gap-3 ">
-        <a className='hover:scale-110 transition' href="www.facebook.com">
+        <a className='hover:scale-110 transition' href="https://www.facebook.com">
           <Image
             src="/images/Facebook.svg"
             alt="image"
@@ -19,7 +19,7 @@ const SosialMedia = () => {
             height={100}
           />
         </a>
-        <a className='hover:scale-110 transition' href="www.twitter.com">
+        <a className='hover:scale-110 transition' href="https://www.twitter.com">
           <Image
             src="/images/Twitter.svg"
             alt="image"
@@ -27,7 +27,7 @@ const SosialMedia = () => {
             height={100}
           />
         </a>
-        <a className='hover:scale-110 transition' href="www.instagram.com">
+        <a className='hover:scale-110 transition' href="https://www.instagram.com">
           <Image
             src="/images/Instagram.svg"
             alt="image"
@@ -35,7 +35,7 @@ const SosialMedia = () => {
             height={100}
           />
         </a>
-        <a className='hover:scale-110 transition' href="www.linkedin.com">
+        <a className='hover:scale-110 transition' href="https://www.linkedin.com">
           <Image
             src="/images/LinkedIn.svg"
             alt="image"
@@ -43,7 +43,7 @@ const SosialMedia = () => {
             height={100}
           />
         </a>
-        <a className='hover:scale-110 transition' href="www.youtube.com">
+        <a className='hover:scale-110 transition' href="https://www.youtube.com">
           <Image
             src="/images/YouTube.svg"
             alt="image"

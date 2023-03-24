@@ -18,7 +18,7 @@ const PrimaryNavigation = () => {
           bg-white
         "
       >
-        <div className="flex justify-between">
+        <div className="flex justify-between py-2">
           <Link href="/">
             <Image
               className={`cursor-pointer md:hidden block`}

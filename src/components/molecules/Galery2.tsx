@@ -1,8 +1,7 @@
-import React, { useState } from "react";
 import Button from "../atoms/Button";
 import CardRectangle from "../atoms/CardRectangle";
 import Share from "../atoms/Share";
-import Modal from "../atoms/Modal";
+import React, { useState, useEffect } from "react";
 
 const Galery = () => {
   const Rectangle = [
@@ -44,6 +43,9 @@ const Galery = () => {
     },
   ];
 
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [zoomedIndex, setZoomedIndex] = useState(null);
+
   return (
     <div className="mt-16 px-[5%]">
       <div className=" flex flex-wrap justify-center gap-16">
@@ -65,8 +67,6 @@ const Galery = () => {
             <CardRectangle
               key={i}
               image={e.image}
-              // action={(e) => console.log()}
-              // action={(e: any) => coba(e.target.src)}
               action={(e: any) => console.log("s")}
             >
               <Share />

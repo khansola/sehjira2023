@@ -1,10 +1,7 @@
 import React from "react";
-import Image from "next/image";
-import CardCircle from "../atoms/CardCircle";
 import Button from "../atoms/Button";
 import TimSehijira from "./TimSehijira";
 import VisiMisi from "../atoms/VisiMisi";
-import Glock from "./Glock";
 import LogoSlider from "./LogoSlider";
 
 const About = () => {

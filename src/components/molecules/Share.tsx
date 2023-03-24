@@ -12,7 +12,7 @@ function Share() {
           </li>
           <a
             className="hyperlink hover:scale-110 transition"
-            href="www.facebook.com"
+            href="https://www.facebook.com"
           >
             <Image
               src="/images/Facebook2.svg"
@@ -23,7 +23,7 @@ function Share() {
           </a>
           <a
             className="hyperlink hover:scale-110 transition"
-            href="www.instagram.com"
+            href="https://www.instagram.com"
           >
             <Image
               src="/images/Instagram2.svg"
@@ -34,7 +34,7 @@ function Share() {
           </a>
           <a
             className="hyperlink hover:scale-110 transition"
-            href="www.Twitter.com"
+            href="https://www.Twitter.com"
           >
             <Image
               src="/images/Twitter2.svg"
@@ -45,7 +45,7 @@ function Share() {
           </a>
           <a
             className="hyperlink hover:scale-110 transition"
-            href="www.Youtube.com"
+            href="https://www.Youtube.com"
           >
             <Image
               src="/images/Youtube2.svg"
