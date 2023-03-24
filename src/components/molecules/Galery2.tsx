@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../atoms/Button";
 import CardRectangle from "../atoms/CardRectangle";
 import Share from "../atoms/Share";
+import Modal from "../atoms/Modal";
 
 const Galery = () => {
   const Rectangle = [
@@ -42,6 +43,7 @@ const Galery = () => {
       image: "/images/Card.jpg",
     },
   ];
+
   return (
     <div className="mt-16 px-[5%]">
       <div className=" flex flex-wrap justify-center gap-16">
@@ -57,13 +59,21 @@ const Galery = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
+
         {Rectangle.map((e, i) => {
           return (
-            <CardRectangle key={i} image={e.image}>
+            <CardRectangle
+              key={i}
+              image={e.image}
+              // action={(e) => console.log()}
+              // action={(e: any) => coba(e.target.src)}
+              action={(e: any) => console.log("s")}
+            >
               <Share />
             </CardRectangle>
           );
         })}
+        <div className="fixed bottom-[1rem] w-[1000px] py-10"></div>
       </div>
       <div className=" text-white mt-7 text-center text-[15px] font-extrabold ">
         <Button

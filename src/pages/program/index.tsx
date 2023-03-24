@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState as UseState } from "react";
 import BlankTemplate from "@/components/templates/BlankTemplate";
 import Program from "@/components/molecules/Program";
 import CardKotak from "@/components/atoms/CardKotak";
 import axios from "axios";
 import { useRouter as Router } from "next/router";
-import { useState as UseState } from "react";
 
 // type Program = {
 //   id: number;
@@ -20,12 +19,7 @@ import { useState as UseState } from "react";
 const index = (props: any) => {
   const { res } = props;
   console.log(res);
-
   const router = Router();
-
-  // const coba = (e: any) => {
-  //   console.log(e);
-  // };
   return (
     <BlankTemplate>
       {/* <Program action={() => setPage(page + 1)}> */}
@@ -44,17 +38,21 @@ const index = (props: any) => {
           );
         })}
       </Program>
+      {/* <div className="p-36" onClick={() =>coba() }>
+        tambah
+      </div> */}
     </BlankTemplate>
   );
 };
 
 export default index;
 
-export async function getServerSideProps() {
-  const res = await axios.get(`http://localhost:8080/v1/articles?page=${1}`);
+export const getServerSideProps = async () => {
+  const res = await axios.get(`http://localhost:8080/v1/articles`);
+
   return {
     props: {
       res: res.data.data.articles,
     },
   };
-}
+};

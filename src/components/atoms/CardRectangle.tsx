@@ -6,7 +6,7 @@ import { NextPage } from "next";
 type ProgramList = {
   image: string;
   children?: React.ReactNode;
-  action?: (v: React.MouseEvent) => void;
+  action?: (e: React.MouseEvent) => void;
 };
 
 type Props = ProgramList;
@@ -18,6 +18,7 @@ const CardRectangle: NextPage<Props> = ({ children, image, action }) => {
         <Card sx={{ maxWidth: 300, height: "auto" }}>
           <div>
             <Image
+              onClick={(e) => action!(e)}
               src={image}
               alt={"vector.png"}
               width={350}

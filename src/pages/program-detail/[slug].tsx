@@ -22,7 +22,7 @@ const index = (props: any) => {
           return (
             <RelatedCard
               key={i}
-              image="/images/f.jpg"
+              image="/images/l.jpg"
               title={e.title}
               excerpt={e.excerpt}
               created_at={e.date.created_at}
