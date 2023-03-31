@@ -1,24 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .blinking-cursor:after {
+    content: "|";
+    @apply text-purple-700;
+    animation: blink 1s infinite;
+
+    /* .text-write {
+      overflow: hidden;
+      animation: write 2s steps(20, end) infinite;
+    } */
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
 @layer base {
   body {
-    @apply lg:text-xl text-sm overflow-x-hidden
+    @apply lg:text-xl text-sm overflow-x-hidden;
   }
   h1 {
-    @apply font-bold lg:text-2xl text-lg
+    @apply font-bold lg:text-2xl text-lg;
   }
+}
+
+@keyframes text-writing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+
+@keyframes color-transition {
+  0% {
+    color: purple;
+  }
+  100% {
+    color: white;
+  }
+}
+
+
+
+.text-writing {
+  animation: text-writing 2s steps(30, end) forwards;
+  
+  /* tambahkan properti lainnya sesuai kebutuhan */
+}
+
+.text-purple-600 {
+  color: purple;
+  transition: color 0.5s ease-in-out;
+}
+
+.text-white {
+  color: white;
+  transition: color 1s ease-in-out;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a202c;
+}
+
+.dark {
+  --bg-color: #1a202c;
+  --text-color: #f7fafc;
+}
+
+.text-white {
+  color: white;
 }
 
 .container {
-  @apply flex flex-col
+  @apply flex flex-col;
 }
 
-.hyperlink {
-  @apply block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4
+body.dark {
+  background-color: #1a202c;
+  color: #f7fafc;
 }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 1s ease, color 1s ease;
+}
+
+body.radial-gradient-animation {
+  background-image: url('/images/radial-gradient.png');
+  animation: radial-gradient 1s forwards;
+  background-size: 0% 0%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.radial-gradient-animation {
+  background-image: var(--tw-bg-opacity) radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  animation: radial-gradient 1s forwards;
+  background-size: 0% 0%;
+  background-position: center;
+}
+
+.slide-transition {
+  transform: translateY(-100%);
+  transition: transform 5s , cubic-bezier(0.4, 0.0, 0.2, 1), background-color 1s ease;
+}
+
+.slide-transition-active {
+  transform: translateY(0%);
+}
+
+.scale-transition {
+  transform: scale(0);
+  transition: transform 1s ease;
+}
+
+.scale-transition-active {
+  transform: scale(1);
+}
+
+.fade-transition {
+  opacity: 0;
+}
+
+.text-transition {
+  transition: all 0.5s ease-in-out;
+}
+/* .hyperlink {
+  @apply block mt-4 lg:inline-block lg:mt-0 mr-4;
+} */
 
 .popup {
-  @apply transition ease-in-out delay-150 bg-violet-600 hover:-translate-y-1 hover:scale-110 hover:bg-violet-700 duration-300
+  @apply transition ease-in-out delay-150 bg-violet-600 hover:-translate-y-1 hover:scale-110 hover:bg-violet-700 duration-300;
 }
+
+.fontDmSans {
+  font-family: "DM Sans", sans-serif;
+}
+
+/* * {
+  border: 1px solid black;
+} */

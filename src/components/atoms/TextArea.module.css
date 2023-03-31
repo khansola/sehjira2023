@@ -1,0 +1,15 @@
+.TextArea {
+  padding: 24px 24px 100px;
+  background: #f9f9ff;
+  border-radius: 20px;
+}
+
+.TextAreaTitle {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  color: #a03c78;
+  margin: 10px 10px 10px 0px;
+}
