@@ -10,6 +10,8 @@ import TimSehijira from "@/components/molecules/TimSehijira";
 import CardCircle from "@/components/atoms/CardCircle";
 
 import { GetServerSideProps } from "next";
+
+import ReactMarkdown from "react-markdown";
 import { api } from "@/utils/api";
 
 export type about = {
@@ -94,7 +96,9 @@ const Index = (props: any) => {
           content={res.attributes.latar_belakang}
         ></VisiMisi>
         <VisiMisi title="Linimasa Sehjira">
-          <li>{res.attributes.body}</li>
+          <ReactMarkdown className="ReactMarkdown">
+            {res.attributes.body}
+          </ReactMarkdown>
         </VisiMisi>
         <div className="flex w-[70%] items-start">
           <VisiMisi title="Visi" content={res.attributes.visi}></VisiMisi>

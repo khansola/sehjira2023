@@ -12,10 +12,10 @@ const myLoader = ({ src, width, quality }: props) => {
 
 const ImageContent = () => {
   return (
-    <div className="w-full md:flex md:items-center md:w-auto hidden">
+    <div className="w-full md:flex md:items-center">
       <Image
         // loader={myLoader}
-        className="h-[100%] w-[100%]"
+        className="h-full w-full object-cover aspect-auto"
         src="/images/Container9.png"
         alt="image"
         width={675.68}

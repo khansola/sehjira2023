@@ -17,43 +17,155 @@ import Image from "next/image";
 import Cards from "@/components/atoms/Cards";
 
 import { ImageSlider } from "@/components/molecules/Section";
+import Button from "@/components/atoms/Button";
+
+const divStyle = {
+  display: "flex",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  height: "768px",
+  width: "100%",
+};
+
+// type data = {
+//   data: {
+//     id: number;
+//     attributes: {
+//       createdAt: string;
+//       updatedAt: string;
+//       publishedAt: string;
+//       caption: string;
+//       desc: string;
+//       slide_banner: {
+//         data: [
+//           {
+//             id: number;
+//             attributes: {
+//               name: string;
+//               alternativeText: string;
+//               caption: string;
+//               width: number;
+//               height: number;
+//               hash: string;
+//               ext: string;
+//               mime: string;
+//               size: number;
+//               url: string;
+//               previewUrl: null;
+//               provider: string;
+//               provider_metadata: null;
+//               createdAt: string;
+//               updatedAt: string;
+//             };
+//           }
+//         ];
+//       };
+//       slide_visi_misi: {
+//         data: [
+//           {
+//             id: number;
+//             attributes: {
+//               name: string;
+//               alternativeText: string;
+//               caption: string;
+//               width: number;
+//               height: number;
+//               hash: string;
+//               ext: string;
+//               mime: string;
+//               size: number;
+//               url: string;
+//               previewUrl: null;
+//               provider: string;
+//               provider_metadata: null;
+//               createdAt: string;
+//               updatedAt: string;
+//             };
+//           }
+//         ];
+//       };
+//     };
+//   };
+// };
+
+// type program = {
+
+// }
+
+// type slide_visi_misi = {
+//   slide_visi_misi: {
+//     data: [
+//       {
+//         id: 8;
+//         attributes: {
+//           name: "Rectangle 228.png";
+//           alternativeText: "";
+//           caption: "";
+//           width: 600;
+//           height: 400;
+//           hash: "Rectangle_228_6ec3d22869";
+//           ext: ".png";
+//           mime: "image/png";
+//           size: 17.88;
+//           url: "/uploads/Rectangle_228_6ec3d22869.png";
+//           previewUrl: null;
+//           provider: "local";
+//           provider_metadata: null;
+//           createdAt: "2023-03-30T07:54:08.232Z";
+//           updatedAt: "2023-03-30T10:45:07.932Z";
+//         };
+//       }
+//     ];
+//   };
+// };
 
 const index = (props: any) => {
   const { data, galery, article, program } = props;
-  // console.log(galery.data[0].attributes.image.data);
-  console.log(program.data);
-  // console.log(article.data);
-  // console.log(program);
-  // console.log(data.data.attributes.slide_visi_misi.data[0].attributes.url);
-  // console.log(data.data.attributes.slide_banner.data[1].attributes.url);
-  // console.log(data);
+  // console.log(program.data);
+
+  console.log(data);
 
   return (
     <BlankTemplate>
-      <ImageHome
-        url1={
-          process.env.BASEURL +
-          data.data.attributes.slide_banner.data[0].attributes.url
-        }
-        url2={
-          process.env.BASEURL +
-          data.data.attributes.slide_banner.data[1].attributes.url
-        }
-        url3={
-          process.env.BASEURL +
-          data.data.attributes.slide_banner.data[2].attributes.url
-        }
-        url4={
-          process.env.BASEURL +
-          data.data.attributes.slide_banner.data[3].attributes.url
-        }
-        url5={
-          process.env.BASEURL +
-          data.data.attributes.slide_banner.data[4].attributes.url
-        }
-        caption={data.data.attributes.caption}
-        desc={data.data.attributes.desc}
-      />
+      <ImageHome>
+        {data.data.attributes.slide_banner.data.map(
+          (slideImage: any, index: any) => (
+            <div className="hover:scale-95 transition duration-500" key={index}>
+              <div
+                className="
+            flex 
+            flex-col"
+                style={{
+                  ...divStyle,
+                  backgroundImage: `url(${
+                    process.env.BASEURL + slideImage.attributes.url
+                  })`,
+                }}
+              >
+                <div className="flex flex-col ">
+                  <div>
+                    <h1
+                      className={`md:text-5xl w-[22rem] ml-20 mt-60 font-bold text-transition text-white`}
+                    >
+                      {slideImage.attributes.alternativeText}
+                    </h1>
+                    <p className="w-2/6 md:w-[45%] text-white ml-20 mt-[23rem]">
+                      {slideImage.attributes.caption}
+                    </p>
+                  </div>
+                  <div className=" self-start justify-self-start ml-[75px] mt-5 bg-white rounded-full flex flex-row px-8 py-6 gap-2 text-[#843C74] font-semibold hover:bg-[#843C74] hover:text-white transition hover:scale-110   ">
+                    <Button
+                      style=" items-center justify-center flex "
+                      title="PELAJARI LEBIH LANJUT"
+                    />
+                    <span className="text-[20px] items-center flex">🡪</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        )}
+      </ImageHome>
 
       <Section>
         <ImageSlider
@@ -71,8 +183,6 @@ const index = (props: any) => {
           }
         />
       </Section>
-      {/* <ProgramList /> */}
-
       <Glock>
         {program.data.slice(0, 6).map((slideImage: any, index: any) => (
           <div key={index}>

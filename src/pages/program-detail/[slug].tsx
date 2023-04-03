@@ -3,7 +3,6 @@ import Section1Article from "@/components/molecules/Section1Article";
 import Share from "@/components/molecules/Share";
 import RelatedArticle from "@/components/molecules/RelatedArticle";
 import RelatedCard from "@/components/atoms/RelatedCard";
-import axios from "axios";
 import { api } from "@/utils/api";
 import { GetServerSideProps } from "next";
 

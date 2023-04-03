@@ -11,9 +11,8 @@ import { api } from "@/utils/api";
 const index = () => {
   return (
     <BlankTemplate>
-      <div className="w-full flex gap-14 justify-beetween pb-20 md:bg-none bg-puan object-fill ">
+      <div className="w-full flex gap-14 justify-beetween pb-20 md:bg-none bg-puan">
         <ImageContent />
-        <DarkModeToggle />
         <Contact />
       </div>
       <DarkModeToggle />
@@ -26,10 +25,9 @@ const index = () => {
 export default index;
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-	const res = await api.get("/api/contact-forms");
+  const res = await api.get("/api/contact-forms");
   console.log(res.data);
-	return {
-		props: {
-		},
-	};
+  return {
+    props: {},
+  };
 };

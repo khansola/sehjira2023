@@ -5,6 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     BASEURL: process.env.BASEURL,
+    TOKEN: process.env.TOKEN,
   },
   images: {
     domains: ["image.unsplash.com", "via.placeholder.com", "127.0.0.1"],

@@ -4,7 +4,10 @@ import React, { useState } from "react";
 import CardRectangle from "../atoms/CardRectangle";
 import Share from "../atoms/Share";
 
-const Gallery = () => {
+const Gallery = (props: any) => {
+  const { program } = props;
+  console.log(program);
+
   const images = [
     {
       id: 1,
@@ -120,12 +123,22 @@ const Gallery = () => {
 export default Gallery;
 
 // export const getServerSideProps: GetServerSideProps = async (ctx) => {
-//   const program = await api.get("/api/programs?populate=*");
-//   // console.log(res.data);
-
+//   const res = await api.get("/api/galleries?populate=*");
+//   console.log(res.data);
 //   return {
 //     props: {
-//       program: program.data,
+//       galery: res.data,
 //     },
 //   };
 // };
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const program = await api.get("/api/programs?populate=*");
+  // console.log(res.data);
+
+  return {
+    props: {
+      program: program.data,
+    },
+  };
+};

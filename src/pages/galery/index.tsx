@@ -6,7 +6,7 @@ import Galery from "@/components/molecules/Galery2";
 import { GetServerSideProps } from "next";
 import { api } from "@/utils/api";
 
-function index() {
+function index(props: any) {
   return (
     <BlankTemplate>
       <Galery />
@@ -15,13 +15,3 @@ function index() {
 }
 
 export default index;
-
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-	const res = await api.get("/api/galleries");
-  console.log(res.data);
-	return {
-		props: {
-		},
-	};
-};
