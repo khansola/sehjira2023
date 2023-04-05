@@ -10,7 +10,7 @@ type ProgramList = {
   caption: string;
   desc?: string;
   buttonLabel?: string;
-  onButtonClick?: () => void;
+  onClick?: () => void;
 };
 
 type Props = ProgramList;
@@ -19,7 +19,10 @@ const Cards = (props: Props) => {
   return (
     <div className="flex flex-wrap justify-center gap-5 hover:scale-110 hover:translate-y-6 transition duration-500">
       <div className="">
-        <Card sx={{ maxWidth: 300, height: 400 }}>
+        <Card
+          sx={{ maxWidth: 300, height: 400 }}
+          onClick={() => props.onClick!()}
+        >
           <div>
             <Image
               src={props.image}

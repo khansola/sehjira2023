@@ -3,26 +3,15 @@ import { GetServerSideProps } from "next";
 import { useState } from "react";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import Logo from "../atoms/Logo";
+import { logoType } from "@/types/LogoType";
 
-const List = [
-  {
-    url: "/images/logoIpsum2.png",
-  },
-  {
-    url: "/images/logoIpsum1.png",
-  },
-  {
-    url: "/images/logoIpsum2.png",
-  },
-  {
-    url: "/images/logoIpsum1.png",
-  },
-  {
-    url: "/images/logoIpsum2.png",
-  },
-];
+type Props = {
+  data: logoType[];
+};
 
-const LogoSlider = () => {
+type props = Props;
+
+const LogoSlider = ({ data }: props) => {
   let [angkaKiri, setAngkaKiri] = useState<number>(0);
   let [angkaKanan, setAngkaKanan] = useState<number>(4);
   const kiri = (): void => {
@@ -34,7 +23,7 @@ const LogoSlider = () => {
     }
   };
   const kanan = () => {
-    if (angkaKanan <= List.length - 1) {
+    if (angkaKanan <= data.length - 1) {
       setAngkaKanan(++angkaKanan);
       setAngkaKiri(++angkaKiri);
     }
@@ -44,8 +33,13 @@ const LogoSlider = () => {
       <div onClick={() => kiri()}>
         <FaArrowAltCircleLeft size={30} />
       </div>
-      {List.slice(angkaKiri, angkaKanan).map((e, i) => {
-        return <Logo key={i} image={e.url} />;
+      {data.slice(angkaKiri, angkaKanan).map((e, i) => {
+        return (
+          <Logo
+            key={i}
+            image={process.env.BASEURL + e.attributes.Image.data.attributes.url}
+          />
+        );
       })}
       <div onClick={() => kanan()}>
         <FaArrowAltCircleRight size={30} />
@@ -55,11 +49,3 @@ const LogoSlider = () => {
 };
 
 export default LogoSlider;
-
-// export const getServerSideProps: GetServerSideProps = async (ctx) => {
-//   const res = await api.get("/api/partners");
-//   console.log(res.data);
-//   return {
-//     props: {},
-//   };
-// };

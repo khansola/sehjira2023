@@ -26,12 +26,11 @@ const BlankTemplate: NextPage<props> = ({ children }) => {
 
   return (
     <>
+      <CommonSEO
+        title={myPath()}
+        description="Description of Create Next Page by GG"
+      />
       <div className="min-h-screen flex w-full flex-col dark:bg-[#1a202c] ">
-        {/* <ScrollTop /> */}
-        <CommonSEO
-          title={myPath()}
-          description="Description of Create Next Page by GG"
-        />
         <PrimaryNavigation />
         <SosmedSide />
         {children}

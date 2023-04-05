@@ -3,50 +3,15 @@ import { GetServerSideProps } from "next";
 import React, { useState } from "react";
 import CardRectangle from "../atoms/CardRectangle";
 import Share from "../atoms/Share";
+import { galeryType } from "@/types/Galerytype";
 
-const Gallery = (props: any) => {
-  const { program } = props;
-  console.log(program);
+type Props = {
+  galery: galeryType[];
+};
 
-  const images = [
-    {
-      id: 1,
-      image: "/images/Card.jpg",
-    },
-    {
-      id: 2,
-      image: "/images/Card.jpg",
-    },
-    {
-      id: 3,
-      image: "/images/Card.jpg",
-    },
-    {
-      id: 4,
-      image: "/images/Card.jpg",
-    },
-    {
-      id: 5,
-      image: "/images/Card.jpg",
-    },
-    {
-      id: 6,
-      image: "/images/Card.jpg",
-    },
-    {
-      id: 7,
-      image: "/images/Card.jpg",
-    },
-    {
-      id: 8,
-      image: "/images/Card.jpg",
-    },
-    {
-      id: 9,
-      image: "/images/Card.jpg",
-    },
-  ];
+type props = Props;
 
+const Gallery = ({ galery }: props) => {
   const [zoomedIndex, setZoomedIndex] = useState<number | undefined>(undefined);
 
   const handleZoomIn = (index: number) => {
@@ -80,14 +45,19 @@ const Gallery = (props: any) => {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        {images.map((img, index) => {
+        {galery.map((img, index) => {
           return (
             <div key={index} className="">
               <div
                 onClick={() => handleZoomIn(index)}
                 className="flex justify-center items-center"
               >
-                <CardRectangle image={img.image}>
+                <CardRectangle
+                  image={
+                    process.env.BASEURL +
+                    img.attributes.image.data.attributes.url
+                  }
+                >
                   <Share />
                 </CardRectangle>
               </div>
@@ -106,7 +76,10 @@ const Gallery = (props: any) => {
                     </button>
                   </div>
                   <img
-                    src={img.image}
+                    src={
+                      process.env.BASEURL +
+                      img.attributes.image.data.attributes.url
+                    }
                     alt="Zoomed"
                     className="z-30 transform w-[100%] h-[500px] rounded-[55px] p-5 object-cover "
                   />
@@ -121,24 +94,3 @@ const Gallery = (props: any) => {
 };
 
 export default Gallery;
-
-// export const getServerSideProps: GetServerSideProps = async (ctx) => {
-//   const res = await api.get("/api/galleries?populate=*");
-//   console.log(res.data);
-//   return {
-//     props: {
-//       galery: res.data,
-//     },
-//   };
-// };
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const program = await api.get("/api/programs?populate=*");
-  // console.log(res.data);
-
-  return {
-    props: {
-      program: program.data,
-    },
-  };
-};

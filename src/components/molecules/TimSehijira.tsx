@@ -2,13 +2,13 @@ import { api } from "@/utils/api";
 import { GetServerSideProps } from "next";
 import React from "react";
 import CardCircle from "../atoms/CardCircle";
-import { NextPage } from "next";
+import { teamType } from "@/types/TeamType";
 
 type props = {
-  children: React.ReactNode;
+  teams: teamType[];
 };
 
-const TimSehijira: NextPage<props> = ({ children }) => {
+const TimSehijira = ({ teams }: props) => {
   // const timsehjira = [
   //   {
   //     image: "/images/Container9.png",
@@ -39,17 +39,20 @@ const TimSehijira: NextPage<props> = ({ children }) => {
           <h3 className="font-bold">Tim Sehjira</h3>
         </div>
         <div className="flex flex-wrap justify-center gap-10 w-auto  ">
-          {/* {timsehjira.map((e, i) => {
+          {teams.slice(0, 4).map((e, i) => {
             return (
               <CardCircle
                 key={i}
-                image={e.image}
-                caption={e.caption}
-                title={e.title}
+                image={"/images/Image(1).png"}
+                caption={e.attributes.division}
+                title={`${
+                  e.attributes.post_degree ? e.attributes.post_degree : ""
+                } ${e.attributes.title} ${
+                  e.attributes.degree ? e.attributes.degree : ""
+                }`}
               ></CardCircle>
             );
-          })} */}
-          {children}
+          })}
         </div>
       </div>
     </div>

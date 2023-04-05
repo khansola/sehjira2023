@@ -2,35 +2,28 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { NextPage } from "next";
+import { slide_visi_misiType } from "@/types/Slide_VisiMisiType";
 
 type Props = {
-  image1?: string;
-  image2?: string;
-  image3?: string;
   children?: React.ReactNode;
+  slide_visi_misi?: slide_visi_misiType[];
 };
 
-export const ImageSlider = (props: Props) => {
+type props = Props;
+
+export const ImageSlider = ({ children, slide_visi_misi }: props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const List = [
-    {
-      image: props.image1,
-    },
-    {
-      image: props.image2,
-    },
-    {
-      image: props.image3,
-    },
-  ];
-
   const handlePrevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? List.length - 1 : prev - 1));
+    setCurrentSlide((prev) =>
+      prev === 0 ? slide_visi_misi!.length - 1 : prev - 1
+    );
   };
 
   const handleNextSlide = () => {
-    setCurrentSlide((prev) => (prev === List.length - 1 ? 0 : prev + 1));
+    setCurrentSlide((prev) =>
+      prev === slide_visi_misi!.length - 1 ? 0 : prev + 1
+    );
   };
 
   return (
@@ -50,7 +43,11 @@ export const ImageSlider = (props: Props) => {
         </button>
         <div className="w-full">
           <Image
-            src={List[currentSlide].image || ""}
+            src={
+              process.env.BASEURL +
+                slide_visi_misi![currentSlide].attributes.image.data.attributes
+                  .url || ""
+            }
             alt="sehijra"
             className="rounded-3xl object-cover aspect-video"
             width={750}
@@ -58,7 +55,7 @@ export const ImageSlider = (props: Props) => {
           />
         </div>
         <div className="flex justify-center mt-2.5rem">
-          {List.map((item, index) => (
+          {slide_visi_misi!.map((item, index) => (
             <button
               key={index}
               className={`h-0.75rem w-0.75rem rounded-full mx-0.5rem ${

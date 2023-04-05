@@ -4,36 +4,18 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
 import Image from "next/image";
-import Button from "../atoms/Button";
+import { useRouter } from "next/router";
 
-import { NextPage } from "next";
+import { ArticleType } from "@/types/ArticleType";
 
-type props = {
-  children: React.ReactNode;
+type Props = {
+  article: ArticleType[];
 };
 
-const Article1: NextPage<props> = ({ children }) => {
-  const ProgramList = [
-    {
-      image: "/images/lihatjuga1.png",
-      caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus commodo luctus venenatis. Integer rhoncus iaculis quam, et iaculis odio sagittis consequat. In at enim justo. Ut in lacus a sem iaculis accumsan.",
-      title: "31 January 2030",
-    },
-    {
-      image: "/images/lihatjuga2.png",
-      caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus commodo luctus venenatis. Integer rhoncus iaculis quam, et iaculis odio sagittis consequat. In at enim justo. Ut in lacus a sem iaculis accumsan.",
-      title: "31 January 2030",
-    },
-    {
-      image: "/images/lihatjuga3.png",
-      caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus commodo luctus venenatis. Integer rhoncus iaculis quam, et iaculis odio sagittis consequat. In at enim justo. Ut in lacus a sem iaculis accumsan.",
-      title: "31 January 2030",
-    },
-  ];
+type props = Props;
 
+const Article1 = ({ article }: props) => {
+  const router = useRouter();
   return (
     <div className="">
       <div>
@@ -42,14 +24,22 @@ const Article1: NextPage<props> = ({ children }) => {
         </h1>
       </div>
       <div className="flex flex-wrap gap-5 justify-center ">
-        {/* {ProgramList.map((e, i) => {
+        {article.slice(0, 3).map((e, i) => {
           return (
             <div className="hover:scale-110 transition duration-500 " key={i}>
               <div className="flex flex-wrap justify-center mt-10 ">
-                <Card sx={{ maxWidth: 350, height: 450 }}>
+                <Card
+                  sx={{ maxWidth: 350, height: 450 }}
+                  onClick={() =>
+                    router.push(`/article-detail/${e.attributes.slug}`)
+                  }
+                >
                   <div className="w-[100%] flex flex-wrap justify-center  ">
                     <Image
-                      src={e.image}
+                      src={
+                        process.env.BASEURL +
+                        e.attributes.Image.data.attributes.url
+                      }
                       alt={"vector.png"}
                       width={300}
                       height={160}
@@ -62,35 +52,28 @@ const Article1: NextPage<props> = ({ children }) => {
                       variant="h5"
                       component="div"
                     >
-                      {e.caption}
+                      {e.attributes.Title}
                     </Typography>
                     <Typography
                       className="text-justify"
                       gutterBottom
                       component="div"
                     >
-                      {e.desc}
+                      {e.attributes.Excerpt}
                     </Typography>
                     <Typography
                       className="text-left"
                       gutterBottom
                       component="div"
                     >
-                      {e.title}
+                      {e.attributes.createdAt}
                     </Typography>
                   </CardContent>
                 </Card>
               </div>
-              <div className=" text-[#843C74] mt-7 text-center text-[15px] font-extrabold ">
-                <Button
-                  style=" px-5 border-2 rounded border-[#843C74] hover:bg-[#843C74] hover:text-white transition  "
-                  title="Lihat Selengkapnya"
-                />
-              </div>
             </div>
           );
-        })} */}
-        {children}
+        })}
       </div>
     </div>
   );

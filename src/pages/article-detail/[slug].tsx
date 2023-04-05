@@ -4,33 +4,50 @@ import Share from "@/components/molecules/Share";
 import RelatedArticle from "@/components/molecules/RelatedArticle";
 import RelatedCard from "@/components/atoms/RelatedCard";
 
+import { useRouter as Router } from "next/router";
+
 import { api } from "@/utils/api";
 import { GetServerSideProps } from "next";
 
-const ArticleDetail = (props: any) => {
-  const { article, terkini } = props;
+import { ArticleType } from "@/types/ArticleType";
+
+type article = {
+  article: ArticleType;
+  terkini: ArticleType[];
+};
+
+type props = article;
+
+const index = ({ article, terkini }: props) => {
   console.log(article);
   console.log(terkini);
+
+  const router = Router();
 
   return (
     <BlankTemplate>
       <Section1Article
-        // title="Pelatihan Kemandirian Remaja Tuna Rungu Ke-5"
-        title={article.data.attributes.Title}
-        content={article.data.attributes.content}
-        created_at={article.data.attributes.createdAt}
+        title={article.attributes.Title}
+        content={article.attributes.content}
+        created_at={article.attributes.createdAt}
+        image={
+          process.env.BASEURL + article.attributes.Image.data.attributes.url
+        }
       />
       <Share />
       <RelatedArticle>
-        {terkini.data.slice(0, 3).map((e: any, i: any) => {
+        {terkini.slice(0, 3).map((e, i) => {
           return (
             <RelatedCard
+              onClick={() =>
+                router.push(`/article-detail/${e.attributes.slug}`)
+              }
               key={i}
               image={
                 process.env.BASEURL + e.attributes.Image.data.attributes.url
               }
               title={e.attributes.Title}
-              excerpt={e.attributes.excerpt}
+              excerpt={e.attributes.Excerpt}
               created_at={e.attributes.createdAt}
             />
           );
@@ -40,18 +57,19 @@ const ArticleDetail = (props: any) => {
   );
 };
 
-export default ArticleDetail;
+export default index;
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
-  const { id } = context.params;
+  const { slug } = context.params;
   try {
-    const article = await api.get(`/api/articles/${id}?populate=*`);
+    const article = await api.get(
+      `/api/articles?filters[slug][$eq]=${slug}&populate=*`
+    );
     const terkini = await api.get("api/articles/?populate=*");
-    console.log(article);
     return {
       props: {
-        article: article.data,
-        terkini: terkini.data,
+        article: article.data.data[0],
+        terkini: terkini.data.data,
       },
     };
   } catch (error) {

@@ -9,13 +9,17 @@ type Card = {
   title: string;
   excerpt: string;
   created_at: string;
+  onClick?: () => void;
 };
 
 type Props = Card;
 
 const RelatedCard = (props: Props) => {
   return (
-    <div className="flex flex-wrap justify-center hover:scale-110 transition duration-500 ">
+    <div
+      className="flex flex-wrap justify-center hover:scale-110 transition duration-500"
+      onClick={() => props.onClick!()}
+    >
       <Card sx={{ maxWidth: 420, height: 520 }}>
         <div className="w-[100%] flex flex-wrap justify-center px-[7%] rounded-md  ">
           <Image

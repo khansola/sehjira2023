@@ -1,52 +1,10 @@
-import { NextPage } from "next";
 import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import Button from "../atoms/Button";
 import Cards from "../atoms/Cards";
-
-const divStyle = {
-  display: "flex",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  height: "768px",
-  width: "100%",
-};
-
-const List = [
-  {
-    image: "/images/Container1.png",
-    caption: "Pelatihan manajemen organısası bagı pengurus dan anggota SEHJIRA",
-  },
-  {
-    image: "/images/Container2.png",
-    caption: "Kelas Kursus Komputer tingkat dasar dan Mahir",
-  },
-  {
-    image: "/images/Container3.png",
-    caption: "Kelas bahasa Isyarat Bisindo dan ASL/ISL",
-  },
-  {
-    image: "/images/Container4.png",
-    caption: "Pelatihan kemandırian disabilitas rungu/Tuli bekerja",
-  },
-  {
-    image: "/images/Container5.png",
-    caption: "Pelatihan kemandırian disabilitas rungu/Tuli bekerja",
-  },
-  {
-    image: "/images/Container6.png",
-    caption: "Pelatiha kemandırian disabilitas rungu/Tuli bekerja",
-  },
-  {
-    image: "/images/Container7.png",
-    caption: "Pelatihan kemandırian disabilitas rungu/Tuli bekerja",
-  },
-  {
-    image: "/images/Container8.png",
-    caption: "Pelatihan kemandırian disabilitas rungu/Tuli bekerja",
-  },
-];
+import { useRouter } from "next/router";
+import { programType } from "@/types/ProgramType";
 
 const responsiveSet = [
   {
@@ -65,11 +23,14 @@ const responsiveSet = [
   },
 ];
 
-type props = {
-  children: React.ReactNode;
+type Props = {
+  program: programType[];
 };
 
-const Glock: NextPage<props> = ({ children }) => {
+type props = Props;
+
+const Glock = ({ program }: props) => {
+  const router = useRouter();
   return (
     <div>
       <div className="pb-10">
@@ -79,12 +40,20 @@ const Glock: NextPage<props> = ({ children }) => {
       </div>
       <div className="slide-container">
         <Slide slidesToShow={1} slidesToScroll={2} responsive={responsiveSet}>
-          {children}
-          {/* {List.map((slideImage, index) => (
+          {program.slice(0, 6).map((slideImage, index) => (
             <div key={index}>
-              <Cards image={slideImage.image} caption={slideImage.caption} />
+              <Cards
+                onClick={() =>
+                  router.push(`/program-detail/${slideImage.attributes.slug}`)
+                }
+                image={
+                  process.env.BASEURL +
+                  slideImage.attributes.Image.data.attributes.url
+                }
+                caption={slideImage.attributes.Title}
+              />
             </div>
-          ))} */}
+          ))}
         </Slide>
         <div className=" text-[#843C74] mt-7 text-center text-[15px] font-extrabold transition  ">
           <Button
