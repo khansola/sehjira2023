@@ -20,7 +20,7 @@ const Cards = (props: Props) => {
     <div className="flex flex-wrap justify-center gap-5 hover:scale-110 hover:translate-y-6 transition duration-500">
       <div className="">
         <Card
-          sx={{ maxWidth: 300, height: 400 }}
+          sx={{ maxWidth: 300, height: 450 }}
           onClick={() => props.onClick!()}
         >
           <div>

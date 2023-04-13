@@ -52,20 +52,20 @@ const ImageHome = ({ banner }: props) => {
             >
               <div className="flex flex-col ">
                 <div>
-                  <h1 className=" text-3xl md:text-5xl bg-gradient-to-r from-[#A03c78] to-purple-400 bg-clip-text text-transparent ml-20 mt-60 w-[53%] blinking-cursor font-extrabold ">
+                  <h1 className=" md:text-5xl w-[22rem] absolute ml-20 mt-60 font-bold text-transition blinking-cursor ">
                     {" "}
                     {currentText}{" "}
                   </h1>
-                  <p className=" mt-5 w-2/6 md:w-2/6 text-white ml-20">
+                  <p className=" w-2/6 md:w-[45%] text-white ml-20 mt-[23rem]">
                     {slideImage.attributes.desc}
                   </p>
                 </div>
-                <div className=" self-start justify-self-start bg-white rounded-full  ml-16 mt-5 h-14 flex border-black border-4 text-[#843C74] font-bold hover:bg-[#843C74] hover:text-white transition hover:scale-110   ">
+                <div className=" self-start justify-self-start ml-[75px] mt-5 bg-white rounded-full flex flex-row px-8 py-6 gap-2 text-[#843C74] font-semibold hover:bg-[#843C74] hover:text-white transition hover:scale-110   ">
                   <Button
                     style=" items-center justify-center flex "
                     title="PELAJARI LEBIH LANJUT"
                   />
-                  <span className="pt-3 pl-3 text-[29px]">🡪</span>
+                  <span className="text-[20px] items-center flex">🡪</span>
                 </div>
               </div>
             </div>

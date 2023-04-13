@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "../atoms/Button";
 import CardRectangle from "../atoms/CardRectangle";
-
+import Link from "next/link";
 import { galeryType } from "@/types/Galerytype";
 
 type Props = {
@@ -12,22 +12,34 @@ type props = Props;
 
 const Galery = ({ galery }: props) => {
   const [zoomedIndex, setZoomedIndex] = useState<number | undefined>(undefined);
+  const backgroundRef = useRef<HTMLDivElement>(null);
 
   const handleZoomIn = (index: number) => {
     setZoomedIndex(index);
   };
 
-  const handleZoomOut = () => {
+  const handleZoomOut = (event: React.MouseEvent) => {
+    event.stopPropagation();
     setZoomedIndex(undefined);
   };
 
-  const handleOverlayClick = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
-    if (event.target === event.currentTarget) {
-      handleZoomOut();
+  useEffect(() => {
+    const handleClickOutside = (event: React.MouseEvent) => {
+      if (backgroundRef.current && event.target === backgroundRef.current) {
+        handleZoomOut(event);
+      }
+    };
+
+    if (zoomedIndex !== undefined) {
+      document.addEventListener("click", handleClickOutside as any);
+    } else {
+      document.removeEventListener("click", handleClickOutside as any);
     }
-  };
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside as any);
+    };
+  }, [zoomedIndex]);
 
   return (
     <div className="mt-16">
@@ -42,13 +54,14 @@ const Galery = ({ galery }: props) => {
                 }
               ></CardRectangle>
               {zoomedIndex === i && (
-                <div className="fixed flex-col items-start top-0 left-0 w-full h-full flex justify-center  ">
+                <div className="fixed flex-col items-start top-0 left-0 w-full h-full flex justify-center">
                   <div
+                    ref={backgroundRef}
                     className="absolute top-0 left-0 w-full h-full z-20 bg-black opacity-50"
-                    onClick={handleOverlayClick}
                   ></div>
                   <div className="absolute top-0 right-0 m-4 z-30">
                     <button
+                      type="button"
                       className="text-white text-2xl font-bold focus:outline-none"
                       onClick={handleZoomOut}
                     >
@@ -61,7 +74,7 @@ const Galery = ({ galery }: props) => {
                       e.attributes.image.data.attributes.url
                     }
                     alt="Zoomed"
-                    className="z-30 transform w-[100%] h-[500px] rounded-[55px] p-5 object-cover "
+                    className="z-30 transform w-[100%] h-[500px] rounded-[55px] p-5 object-cover"
                   />
                 </div>
               )}
@@ -70,10 +83,12 @@ const Galery = ({ galery }: props) => {
         })}
       </div>
       <div className=" text-[#843C74] mt-7 text-center text-[15px] font-extrabold transition ">
-        <Button
-          style=" px-5 border-2 rounded border-[#843C74] hover:bg-[#843C74] hover:text-white transition  "
-          title="Lihat Selengkapnya"
-        />
+        <Link href="/galery">
+          <Button
+            style=" px-5 border-2 rounded border-[#843C74] hover:bg-[#843C74] hover:text-white transition  "
+            title="Lihat Selengkapnya"
+          />
+        </Link>
       </div>
     </div>
   );

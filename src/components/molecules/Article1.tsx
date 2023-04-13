@@ -2,8 +2,9 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-
+import Link from "next/link";
 import Image from "next/image";
+import Button from "../atoms/Button";
 import { useRouter } from "next/router";
 
 import { ArticleType } from "@/types/ArticleType";
@@ -71,9 +72,18 @@ const Article1 = ({ article }: props) => {
                   </CardContent>
                 </Card>
               </div>
+
             </div>
           );
         })}
+      </div>
+      <div className="flex justify-center items-center p-10 text-[#843C74] mt-7 text-center text-[15px] font-extrabold transition">
+        <Link href="/article">
+          <Button
+            style=" px-5 border-2 rounded border-[#843C74] hover:bg-[#843C74] hover:text-white transition  "
+            title="Lihat Selengkapnya"
+          />
+        </Link >
       </div>
     </div>
   );

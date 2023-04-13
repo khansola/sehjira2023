@@ -1,5 +1,3 @@
-import { api } from "@/utils/api";
-import { GetServerSideProps } from "next";
 import React, { useState } from "react";
 import CardRectangle from "../atoms/CardRectangle";
 import Share from "../atoms/Share";
